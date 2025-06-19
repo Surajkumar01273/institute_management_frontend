@@ -10,7 +10,7 @@
   import AddCourse from './components/AddCourse';
   import Student from './components/Student';
   import AddStudent from './components/AddStudent';
-  import CollectFee from './components/CollectFEE';
+  import CollectFee from './components/CollectFee';
   import PaymentHistory from './components/PaymentHistory';
 
   function App() {
