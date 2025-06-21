@@ -1,8 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import '../components/style.css';
 
 function Sidebar() {
+
+  const location = useLocation();
   return (
     <>
       <div className='nav-container w-[20%] bg-amber-900 h-[95vh] px-4'>
@@ -21,13 +23,13 @@ function Sidebar() {
         {/* Menue */}
 
         <div className='flex flex-col justify-center gap-3.5'>
-          <Link to='home' className='menu-link'><i className="fa-solid fa-house mr-2"></i>Home</Link>
-          <Link to='all-course' className='menu-link'><i className="fa-solid fa-book mr-2"></i>All Course</Link>
-          <Link to='add-course' className='menu-link'><i className="fa-solid fa-plus mr-2"></i>Add Course</Link>
-          <Link to='add-student' className='menu-link'><i className  ="fa-solid fa-circle-user mr-2"></i>Add Student</Link>
-          <Link to='all-student' className='menu-link'><i className='fa-solid fa-user-group mr-2'></i>All Student</Link>
-          <Link to='collect-fee' className='menu-link'><i className='fa solid fa-money-bill mr-2'></i> Collect Fee</Link>
-          <Link to='payment-history' className='menu-link'><i className='fa-solid fa-list mr-2'></i>Payment History</Link>
+          <Link to='home' className={location.pathname === '/dashboard/home' ? 'menu-active-link' : 'menu-link'}><i className="fa-solid fa-house mr-2"></i>Home</Link>
+          <Link to='all-course' className={location.pathname === '/dashboard/all-course' ? 'menu-active-link' : 'menu-link'}><i className="fa-solid fa-book mr-2"></i>All Course</Link>
+          <Link to='add-course' className={location.pathname === '/dashboard/add-course' ? 'menu-active-link' : 'menu-link'}><i className="fa-solid fa-plus mr-2"></i>Add Course</Link>
+          <Link to='add-student' className={location.pathname === '/dashboard/add-student' ? 'menu-active-link' : 'menu-link'}><i className  ="fa-solid fa-circle-user mr-2"></i>Add Student</Link>
+          <Link to='all-student' className={location.pathname === '/dashboard/all-student' ? 'menu-active-link' : 'menu-link'}><i className='fa-solid fa-user-group mr-2'></i>All Student</Link>
+          <Link to='collect-fee' className={location.pathname === '/dashboard/collect-fee' ? 'menu-active-link' : 'menu-link'}><i className='fa solid fa-money-bill mr-2'></i> Collect Fee</Link>
+          <Link to='payment-history' className={location.pathname === '/dashboard/payment-history' ? 'menu-active-link' : 'menu-link'}><i className='fa-solid fa-list mr-2'></i>Payment History</Link>
         </div>
         <div className='absolute bottom-8 text-white text-xs'>
           <p className='font-semibold text-sm'>Contact Developer</p>

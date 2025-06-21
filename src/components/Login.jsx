@@ -17,6 +17,11 @@ const Login = () => {
     console.log(email, password);
     axios.post('https://institute-management-system-backend.onrender.com/user/login', {email:email, password:password})
       .then((res) => {
+        localStorage.setItem('token',res.data.token)
+        localStorage.setItem('instituteName', res.data.instituteName)
+        localStorage.setItem('imageUrl', res.data.imageUrl)
+        localStorage.setItem('imageId', res.data.imageId)
+        localStorage.setItem('email', res.data.email)
         navigate('/dashboard')
         toast.success('Login successfull')
         setisLoader(false)

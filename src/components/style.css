@@ -29,6 +29,13 @@
     border-radius: 5px;
     color: white;
 }
+.menu-active-link{
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+    background-color: rgba(26, 8, 63, 0.5);
+}
 .menu-link:hover{
     background-color: rgba(26, 8, 63, 0.5);
 }

@@ -17,15 +17,15 @@ const Dashboard = () => {
 
           <div className='top-bar py-1 h-[8vh] w-[100%]'>
             <div className='flex justify-end mr-4 items-center'>
-              <div className='bg-slate-300 rounded-full w-12 h-12 flex justify-center items-center mr-2'>
+              <div className='bg-slate-300 rounded-full w-10 h-10 mb-3 flex justify-center items-center mr-2'>
                 <img
-                  className='h-10 w-10'
-                  src='../../public/book-logo.png'
+                  className='h-8 w-8 rounded-full'
+                  src={localStorage.getItem('imageUrl')}
                   alt=''
                 />
               </div>
               <div>
-                <p className='text-xs font-semibold pb-2'>ISM Patna</p>
+                <p className='text-xs font-semibold pb-2'>{localStorage.getItem('instituteName')}</p>
                 <button className='bg-pink-600 px-3 text-white py-1 rounded-sm text-xs'>Logout</button>
               </div>
             </div>
