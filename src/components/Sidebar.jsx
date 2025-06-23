@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import '../components/style.css';
+import img from '../assets/book-logo.png'
 
 function Sidebar() {
 
@@ -9,7 +10,7 @@ function Sidebar() {
     <>
       <div className='nav-container w-[20%] bg-amber-900 h-[95vh] px-4'>
         <div className='brand-container gap-2 h-20 flex items-center'>
-          <img className='h-6 w-6' src='../../public/book-logo.png' alt='' />
+          <img className='h-6 w-6' src={img} alt='' />
           <div>
             <h2 className='text-white font-semibold text-sm'>
               LMS application

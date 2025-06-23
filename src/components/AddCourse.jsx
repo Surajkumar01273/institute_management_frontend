@@ -2,22 +2,27 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 function AddCourse() {
-  const [formData, setformData] = useState({
-    courseName: '',
-    description: '',
-    price: '',
-    startDate: '',
-    endDate: '',
-  });
+  // const [formData, setformData] = useState({
+  //   courseName: '',
+  //   description: '',
+  //   price: '',
+  //   startDate: '',
+  //   endDate: '',
+  // });
+  const [courseName, setCourseName] = useState('');
+  const [description, setDescription] = useState('');
+  const [price, setPrice] = useState('');
+  const [startDate, setStartDate] = useState('')
+  const [endDate, setEndDate] = useState('')
   const [isloader, setisLoader] = useState(false);
   const [image, setImage] = useState('');
   const [imageUrl, setImageUrl] = useState('');
 
-  const changeHandler = (e) => {
-    const name = e.target.name;
-    const value = e.target.value;
-    setformData({ ...formData, [name]: value });
-  };
+  // const changeHandler = (e) => {
+  //   const name = e.target.name;
+  //   const value = e.target.value;
+  //   setformData({ ...formData, [name]: value });
+  // };
   const fileHandler = (e) => {
     setImage(e.target.files[0]);
     setImageUrl(URL.createObjectURL(e.target.files[0]));
@@ -25,14 +30,18 @@ function AddCourse() {
   const submitHandler = (e) => {
     e.preventDefault();
     setisLoader(true);
-    axios
-      .post(
-        'https://institute-management-system-backend.onrender.com/course/add-course',
+    const formData = new FormData();
+    formData.append('courseName', courseName)
+    formData.append('description', description)
+    formData.append('price', price) 
+    formData.append('startingDate', startDate)
+    formData.append('endDate', endDate)
+    formData.append('image', image)
+    axios.post('https://institute-management-system-backend.onrender.com/course/add-course',
         formData,
-        image,
         {
           headers: {
-            Authorization: 'Bearer '+localStorage.getItem('token'),
+            Authorization: 'Bearer '+localStorage.getItem('token')
           },
         }
       )
@@ -43,7 +52,7 @@ function AddCourse() {
       })
       .catch((error) => {
         setisLoader(false);
-        console.log(error);
+        console.log('Error hai', error);
         toast.error('Some things Error');
       });
   };
@@ -58,49 +67,49 @@ function AddCourse() {
           Add New Course
         </h1>
         <input
-          onChange={changeHandler}
+          onChange={(e)=>setCourseName(e.target.value)}
           className='border border-slate-500 rounded-md w-[80%] p-2.5'
           type='text'
           required
           name='courseName'
-          value={formData.courseName}
+          // value={formData.courseName}
           placeholder='Course Name'
         />
         <input
-          onChange={changeHandler}
+          onChange={(e)=>setDescription(e.target.value)}
           className='border border-slate-500 rounded-md w-[80%] p-2.5'
           type='text'
           required
           placeholder='Description'
           name='description'
-          value={formData.description}
+          // value={formData.description}
         />
         <input
-          onChange={changeHandler}
+          onChange={(e)=>setPrice(e.target.value)}
           className='border border-slate-500 rounded-md w-[80%] p-2.5'
           type='number'
           required
           placeholder='Pricce'
           name='price'
-          value={formData.price}
+          // value={formData.price}
         />
         <input
-          onChange={changeHandler}
+          onChange={(e)=>setStartDate(e.target.value)}
           className='border border-slate-500 rounded-md w-[80%] p-2.5'
           type='text'
           required
           placeholder='Start Date (DD-MM-YY)'
           name='startDate'
-          value={formData.startDate}
+          // value={formData.startDate}
         />
         <input
-          onChange={changeHandler}
+          onChange={(e)=>setEndDate(e.target.value)}
           className='border border-slate-500 rounded-md w-[80%] p-2.5'
           type='text'
           required
           placeholder='End Date (DD-MM-YY)'
           name='endDate'
-          value={formData.endDate}
+          // value={formData.endDate}
         />
         <input
           onChange={fileHandler}
@@ -108,7 +117,7 @@ function AddCourse() {
           type='file'
           name='file'
           required
-          value={formData.file}
+          // value={formData.file}
         />
         {imageUrl && (
           <img className='h-30 w-30' src={imageUrl} alt='course image' />

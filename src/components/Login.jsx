@@ -3,6 +3,7 @@ import axios from 'axios';
 import '../components/style.css';
 import { useNavigate, Link } from 'react-router-dom';
 import { toast } from 'react-toastify'
+import img from '../assets/book-logo.png'
 
 
 const Login = () => {
@@ -39,7 +40,7 @@ const Login = () => {
     <div className='w-full h-screen flex justify-center items-center'>
       <div className='flex flex-col md:flex-row w-[80%] h-[80%] bg-white  rounded-lg overflow-hidden'>
         <div className='w-[50%] bg-violet-600 flex flex-col pt-18 items-center'>
-          <img src='public/book-logo.png' alt='book logo' className='w-60' />
+          <img src={img} alt='book logo' className='w-60' />
           <h2 className='text-lg text-center text-zinc-100'>
             Here Easly to track student & course Detailas
           </h2>
