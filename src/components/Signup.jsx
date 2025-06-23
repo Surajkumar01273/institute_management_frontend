@@ -26,7 +26,7 @@ const Signup = () => {
     formData.append('phone', phone);
     formData.append('password', password);
     formData.append('image', image);
-    axios.post('http://localhost:4200/user/signup', formData)
+    axios.post('https://institute-management-system-backend.onrender.com/user/signup', formData)
       .then((res) => {
         setisLoader(false)
         navigte('/login')
@@ -49,7 +49,7 @@ const Signup = () => {
     <div className='w-full h-screen flex justify-center md:items-center'>
       <div className='flex flex-col w-full md:flex-row md:w-[90%] md:h-[90%] lg:h-[80%] bg-white md:rounded-lg md:overflow-hidden'>
         <div className='w-full md:w-[50%]  py-10 md:py-0 bg-violet-600 flex flex-col md:pt-30 items-center'>
-          <img src={img} alt='book logo' className='w-44 lg:w-60' />
+          <img src={img} alt='book img' className='w-44 lg:w-60' />
           <h2 className='text-xs lg:text-lg px-1.5 md:px-0 text-center text-zinc-100'>
             Here Easly to track student & course Detailas
           </h2>
