@@ -1,9 +1,15 @@
 import React from 'react';
 import Sidebar from '../components/Sidebar';
 import '../components/style.css';
-import { Outlet } from 'react-router-dom';
+import { Navigate, Outlet, useNavigate } from 'react-router-dom';
 
 const Dashboard = () => {
+  const navigate = useNavigate()
+
+  function logoutHandler(){
+    navigate('/login')
+    localStorage.clear()
+  }
   return (
     <div className='dashboard-main-container'>
       <div className='w-[97%] h-[95vh] bg-white rounded-sm flex flex-row overflow-hidden'>
@@ -26,7 +32,7 @@ const Dashboard = () => {
               </div>
               <div>
                 <p className='text-xs font-semibold pb-2'>{localStorage.getItem('instituteName')}</p>
-                <button className='bg-pink-600 px-3 text-white py-1 rounded-sm text-xs'>Logout</button>
+                <button onClick={logoutHandler} className='bg-pink-600 px-3 text-white font-semibold hover:bg-pink-800 py-1 rounded-sm text-xs cursor-pointer'>Logout</button>
               </div>
             </div>
           </div>

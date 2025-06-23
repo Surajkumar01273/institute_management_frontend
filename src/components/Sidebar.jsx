@@ -12,10 +12,10 @@ function Sidebar() {
           <img className='h-6 w-6' src='../../public/book-logo.png' alt='' />
           <div>
             <h2 className='text-white font-semibold text-sm'>
-              Life Spend application
+              LMS application
             </h2>
             <p className='text-[10px] text-yellow-100'>
-              Manage your App in Easy way
+              Manage your Institute in Easy way
             </p>
           </div>
         </div>
