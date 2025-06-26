@@ -8,7 +8,7 @@ function Sidebar() {
   const location = useLocation();
   return (
     <>
-      <div className='nav-container w-[20%] bg-amber-900 h-[95vh] px-4'>
+      <div className='nav-container w-[20%] bg-amber-900 h-[95vh] px-4 hidden md:block'>
         <div className='brand-container gap-2 h-20 flex items-center'>
           <img className='h-6 w-6' src={img} alt='' />
           <div>

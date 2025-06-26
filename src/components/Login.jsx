@@ -38,18 +38,18 @@ const Login = () => {
 
   return (
     <div className='w-full h-screen flex justify-center items-center'>
-      <div className='flex flex-col md:flex-row w-[80%] h-[80%] bg-white  rounded-lg overflow-hidden'>
-        <div className='w-[50%] bg-violet-600 flex flex-col pt-18 items-center'>
+      <div className='flex flex-col md:flex-row w-full h-full md:w-[80%] md:h-[80%] bg-white  rounded-lg md:overflow-hidden'>
+        <div className='md:w-[50%] bg-violet-600 flex flex-col pt-4 pb-8 md:pt-18 items-center'>
           <img src={img} alt='book logo' className='w-60' />
-          <h2 className='text-lg text-center text-zinc-100'>
+          <h2 className='text-xs px-2 md:text-lg text-center text-zinc-100'>
             Here Easly to track student & course Detailas
           </h2>
-          <p className='text-yellow-200 pt-2 text-sm'>
+          <p className='text-yellow-200 pt-2 text-xs md:text-sm'>
             Manage own Institute Data
           </p>
         </div>
 
-        <div className='signup-form bg-zinc-100 w-[50%] h-full flex flex-col items-center justify-center'>
+        <div className='signup-form bg-zinc-100 md:w-[50%] h-full flex flex-col items-center justify-center'>
           <h1 className='font-bold text-xl pb-10'>Login your Account</h1>
           <form
             onSubmit={submitHandler}
