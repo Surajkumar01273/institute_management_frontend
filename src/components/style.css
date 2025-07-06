@@ -20,17 +20,17 @@
 .main-container{
     background-color: white;
 }
-.top-bar{
+/* .top-bar{
     background-color: #e6eaef;
-}
+} */
 .menu-link{
-    font-size: 16px;
+    /* font-size: 16px; */
     padding: 10px;
     border-radius: 5px;
     color: white;
 }
 .menu-active-link{
-    font-size: 16px;
+    /* font-size: 16px; */
     padding: 10px;
     border-radius: 5px;
     color: white;

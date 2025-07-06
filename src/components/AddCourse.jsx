@@ -61,14 +61,14 @@ function AddCourse() {
     <div>
       <form
         onSubmit={submitHandler}
-        className='flex flex-col gap-3 justify-center items-center h-[80vh]'
+        className='flex flex-col mt-8 md:mt-0 gap-3 justify-center items-center w-full md:w-[70vw] h-full md:h-[87vh] 3xl:text-4xl'
       >
-        <h1 className='mb-2 text-xl font-semibold hover:underline transition duration-800'>
+        <h1 className='mb-2 text-xl font-semibold hover:underline transition duration-800 3xl:text-6xl'>
           Add New Course
         </h1>
         <input
           onChange={(e)=>setCourseName(e.target.value)}
-          className='border border-slate-500 rounded-md w-[80%] p-2.5'
+          className='border border-slate-500 rounded-md w-[80%] p-2.5 3xl:p-6'
           type='text'
           required
           name='courseName'
@@ -77,7 +77,7 @@ function AddCourse() {
         />
         <input
           onChange={(e)=>setDescription(e.target.value)}
-          className='border border-slate-500 rounded-md w-[80%] p-2.5'
+          className='border border-slate-500 rounded-md w-[80%] p-2.5 3xl:p-6'
           type='text'
           required
           placeholder='Description'
@@ -86,7 +86,7 @@ function AddCourse() {
         />
         <input
           onChange={(e)=>setPrice(e.target.value)}
-          className='border border-slate-500 rounded-md w-[80%] p-2.5'
+          className='border border-slate-500 rounded-md w-[80%] p-2.5 3xl:p-6'
           type='number'
           required
           placeholder='Pricce'
@@ -95,7 +95,7 @@ function AddCourse() {
         />
         <input
           onChange={(e)=>setStartDate(e.target.value)}
-          className='border border-slate-500 rounded-md w-[80%] p-2.5'
+          className='border border-slate-500 rounded-md w-[80%] p-2.5 3xl:p-6'
           type='text'
           required
           placeholder='Start Date (DD-MM-YY)'
@@ -104,7 +104,7 @@ function AddCourse() {
         />
         <input
           onChange={(e)=>setEndDate(e.target.value)}
-          className='border border-slate-500 rounded-md w-[80%] p-2.5'
+          className='border border-slate-500 rounded-md w-[80%] p-2.5 3xl:p-6'
           type='text'
           required
           placeholder='End Date (DD-MM-YY)'
@@ -113,18 +113,18 @@ function AddCourse() {
         />
         <input
           onChange={fileHandler}
-          className='border border-slate-500 rounded-md w-[80%] p-2.5'
+          className='border border-slate-500 rounded-md w-[80%] p-2.5 3xl:p-6'
           type='file'
           name='file'
           required
           // value={formData.file}
         />
         {imageUrl && (
-          <img className='h-30 w-30' src={imageUrl} alt='course image' />
+          <img className='h-30 w-30' src={imageUrl} alt='course image 3xl:p-6' />
         )}
         <button
           type='submit'
-          className='border border-slate-500 rounded-md w-[80%] p-2.5 bg-pink-600 text-white hover:bg-pink-800 hover:font-semibold transition duration-800'
+          className='border border-slate-500 rounded-md w-[80%] p-2.5 3xl:p-6 bg-pink-600 text-white hover:bg-pink-800 hover:font-semibold transition duration-800'
         >
           {isloader && (
             <i className='loader fa-solid fa-spinner fa-spin-pulse'></i>
