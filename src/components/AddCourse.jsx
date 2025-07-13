@@ -44,7 +44,7 @@ function AddCourse() {
             Authorization: 'Bearer '+localStorage.getItem('token')
           },
         }
-      )
+      ) 
       .then((res) => {
         console.log(res.data);
         setisLoader(false);
