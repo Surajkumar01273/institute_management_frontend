@@ -66,7 +66,7 @@ const Dashboard = () => {
 
           {/* Main Container */}
 
-          <div className='bg-white h-full md:overflow-y-auto w-full'>
+          <div className='bg-white h-full md:overflow-y-scroll min-h-[100vh] w-full'>
             <Outlet />
           </div>
         </div>
