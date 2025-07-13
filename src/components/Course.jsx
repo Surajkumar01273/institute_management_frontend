@@ -33,17 +33,17 @@ function Course() {
   };
   return (
     <>
-      <div className='flex gap-4'>
+      <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 md:p-4 overflow-y-auto bg-gray-200'>
         {courses.map((course) => (
-          <div key={course._id} className='bg-amber-200 w-[250px] h-[300px]'>
+          <div key={course._id} className='bg-white w-full md:w-[270px] md:h-[300px] p-2'>
               <div className=''>
                 <img
-                  className='h-[150px] w-[250px]'
+                  className='h-[200px] md:h-[150px] rounded-lg w-full md:w-[270px]'
                   src={course.imageUrl}
                   alt='course pic'
                 />
               </div>
-              <div>
+              <div className='px-2'>
                 <h2>{course.courseName}</h2>
                 <p>{course.description}</p>
                 <p>{course.startingDate}</p>
