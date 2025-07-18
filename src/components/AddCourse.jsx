@@ -1,14 +1,9 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
+
 function AddCourse() {
-  // const [formData, setformData] = useState({
-  //   courseName: '',
-  //   description: '',
-  //   price: '',
-  //   startDate: '',
-  //   endDate: '',
-  // });
   const [courseName, setCourseName] = useState('');
   const [description, setDescription] = useState('');
   const [price, setPrice] = useState('');
@@ -17,16 +12,14 @@ function AddCourse() {
   const [isloader, setisLoader] = useState(false);
   const [image, setImage] = useState('');
   const [imageUrl, setImageUrl] = useState('');
+  const navigate = useNavigate();
 
-  // const changeHandler = (e) => {
-  //   const name = e.target.name;
-  //   const value = e.target.value;
-  //   setformData({ ...formData, [name]: value });
-  // };
+ 
   const fileHandler = (e) => {
     setImage(e.target.files[0]);
     setImageUrl(URL.createObjectURL(e.target.files[0]));
   };
+
   const submitHandler = (e) => {
     e.preventDefault();
     setisLoader(true);
@@ -49,6 +42,7 @@ function AddCourse() {
         console.log(res.data);
         setisLoader(false);
         toast.success('New Course added');
+        navigate('/dasboard/all-course')
       })
       .catch((error) => {
         setisLoader(false);

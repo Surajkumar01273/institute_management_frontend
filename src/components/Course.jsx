@@ -37,7 +37,7 @@ function Course() {
         {courses.map((course) => (
           <div
             key={course._id}
-            className='bg-white p-2'
+            className='bg-white p-2 cursor-pointer shadow-black hover:shadow-xl transition duration-700'
           >
             <div className='mb-2'>
               <img

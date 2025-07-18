@@ -62,9 +62,6 @@ const Dashboard = () => {
               <Sidebar />
             </div>
           </div>
-          {/* top nav bar */}
-
-          {/* Main Container */}
 
           <div className='bg-white h-full md:overflow-y-scroll min-h-[100vh] w-full'>
             <Outlet />
